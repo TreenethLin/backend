@@ -35,7 +35,7 @@ $ yarn install
 ## Set up local docker database
 
 ```bash
-$ docker run --name=chanchala -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=chanchala -p 3308:3306 -d mysql --default-authentication-plugin=mysql_native_password
+$ docker run --name linkquiz -e POSTGRES_PASSWORD=123456 -e POSTGRES_DB=linkquiz -p 5432:5432 -d postgres
 ```
 
 ## Running the app
