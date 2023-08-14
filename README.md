@@ -32,6 +32,12 @@
 $ yarn install
 ```
 
+## Set up local docker database
+
+```bash
+$ docker run --name=chanchala -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=chanchala -p 3308:3306 -d mysql --default-authentication-plugin=mysql_native_password
+```
+
 ## Running the app
 
 ```bash
