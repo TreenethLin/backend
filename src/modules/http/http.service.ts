@@ -17,12 +17,8 @@ export class ExamHttpService {
     baseURL: process.env.EXAM_API_BASE_URL,
   };
 
-  async generateExam(
-    data: CreateExamDto,
-  ): Promise<AxiosResponse<ExamAIResponse>> {
-    const result = await firstValueFrom(
-      this.httpService.post('/create_response', data, this.config),
-    );
+  async generateExam(data: CreateExamDto): Promise<AxiosResponse<ExamAIResponse>> {
+    const result = await firstValueFrom(this.httpService.post('/create_response', data, this.config));
     return result;
   }
 }

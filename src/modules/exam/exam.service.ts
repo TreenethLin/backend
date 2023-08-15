@@ -9,16 +9,13 @@ import responseConfig from '@config/response.config';
 @Injectable()
 export class ExamService {
   private readonly logger = new Logger(ExamService.name);
-  constructor(
-    private readonly examDal: ExamDal,
-    private readonly httpService: ExamHttpService,
-  ) {}
+  constructor(private readonly examDal: ExamDal, private readonly httpService: ExamHttpService) {}
 
   async createExam(createExamDto: CreateExamDto): Promise<HttpResponse<void>> {
     const externalData = await this.httpService.generateExam(createExamDto);
     const requestData = createExamDto;
     const data = {
-      id: Number(uuidv4()),
+      id: uuidv4(),
       created_at: new Date(),
       grade: requestData.grade,
       subject: requestData.subject,

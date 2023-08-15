@@ -13,7 +13,7 @@ export class ExamDal {
   ) {}
 
   async createExam(data: ExamRequestData): Promise<ExamEntity> {
-    const result = await this.examRepository.create(data);
+    const result = await this.examRepository.save(data);
     return result;
   }
 

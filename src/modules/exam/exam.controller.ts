@@ -1,15 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-  Version,
-  HttpCode,
-  HttpStatus,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Version, HttpCode, HttpStatus } from '@nestjs/common';
 import { ExamService } from './exam.service';
 import { CreateExamDto } from './dto/create-exam.dto';
 import { HttpResponse } from 'http-response';
@@ -21,9 +10,7 @@ export class ExamController {
   @Version('1')
   @Post()
   @HttpCode(HttpStatus.CREATED)
-  async createExam(
-    @Body() createExamDto: CreateExamDto,
-  ): Promise<HttpResponse<void>> {
+  async createExam(@Body() createExamDto: CreateExamDto): Promise<HttpResponse<void>> {
     return this.examService.createExam(createExamDto);
   }
 
