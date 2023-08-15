@@ -45,21 +45,21 @@ export class ExamController {
   @Version('1')
   @Get('grade/:grade')
   @HttpCode(HttpStatus.OK)
-  async getAllExamsByGrade(@Param('grade') grade: number) {
+  async getAllExamsByGrade(@Param('grade') grade: number): Promise<HttpResponse<boolean>> {
     return this.examService.getAllExamsByGrade(grade);
   }
 
   @Version('1')
   @Get('subject/:subject')
   @HttpCode(HttpStatus.OK)
-  async getAllExamsBySubject(@Param('subject') subject: string) {
+  async getAllExamsBySubject(@Param('subject') subject: string): Promise<HttpResponse<boolean>> {
     return this.examService.getAllExamsBySubject(subject);
   }
 
   @Version('1')
   @Get('topic/:topic')
   @HttpCode(HttpStatus.OK)
-  async getAllExamsByTopic(@Param('topic') topic: string) {
+  async getAllExamsByTopic(@Param('topic') topic: string): Promise<HttpResponse<boolean>> {
     return this.examService.getAllExamsByTopic(topic);
   }
 }
