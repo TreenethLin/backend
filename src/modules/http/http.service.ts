@@ -3,7 +3,7 @@ import { HttpService } from '@nestjs/axios';
 import { AxiosResponse } from 'axios';
 import { firstValueFrom } from 'rxjs';
 import { ExamAIResponse } from 'exam.type';
-import { CreateExamDto } from '@modules/exam/dto/create-exam.dto';
+import { CreateExamDto } from '@modules/exam/dto/exam.dto';
 
 @Injectable()
 export class ExamHttpService {

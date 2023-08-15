@@ -15,6 +15,6 @@ export interface ExamRequestData {
   subject: string;
   topic: string;
   part: number;
-  num_question: number;
+  num_question?: number;
   exam_responses?: ExamAIResponse;
 }
